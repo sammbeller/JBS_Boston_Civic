@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  time: 1
-  location: 1
-
-two:
-  time: 1
-  location: 1
