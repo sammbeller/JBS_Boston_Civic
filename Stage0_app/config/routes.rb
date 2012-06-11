@@ -1,4 +1,14 @@
 Stage0App::Application.routes.draw do
+  resources :comments
+
+  get "static_pages/main"
+
+  get "static_pages/home"
+
+  get "static_pages/feed"
+
+  get "static_pages/map"
+
   resources :reports
 
   # The priority is based upon order of creation:
