@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/weather.js"></script>
+	</head>
+	<body>
+		Weather forecast here
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1>Geo Test</h1>
+		Hello World!
+		<button onclick="getLocation()">Click Me</button>
+		<script>
+		function getLocation() {
+			if(navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition)
+			} else {
+				alert("Geolocation not supported")
+			}
+
+			function showPosition(position) {
+				alert("Latitude: " + position.coords.latitude+ "Longitude: " + position.coords.longitude)
+			}
+
+		}
+		</script>
+	</body>
+</html>
