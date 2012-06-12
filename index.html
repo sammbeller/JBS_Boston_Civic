@@ -2,7 +2,7 @@
 
 <html>
 
-	<head> <script type="text/javascript" src="jquery.js"></script></head>
+	<head> <script type="text/javascript" src="zepto.js"></script></head>
 
 	<body>
 		<h1>Geo Test</h1>
@@ -12,30 +12,21 @@
 		<script>
 		function getLocation() {
 			//if(navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(showPosition)
+				navigator.geolocation.getCurrentPosition(sendPosition)
 			//} else {
 			//	alert("Geolocation not supported")
 			//}
 
 			function sendPostion(position){
-
-				jQuery.post("blank.url",
-
-				{
-					latitude: position.coords.latitude;
-					longitude: position.coords.longitude;
-					timestamp: new Date().getTime();
-				},
-
-				alert("Report Successful")
-
-				)
+				jQuery.post(
+					url: "blank.url",
+					data: {
+						latitude: position.coords.latitude;
+						longitude: position.coords.longitude;
+						timestamp: new Date().getTime();},
+					success: alert("Report Successful");
+					);
 			}
-
-			function showPosition(position) {
-				alert("Latitude: " + position.coords.latitude+ "Longitude: " + position.coords.longitude)
-			}
-
 		}
 		</script>
 
