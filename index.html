@@ -2,6 +2,8 @@
 
 <html>
 
+	<head> <script type="text/javascript" src="jquery.js"></script></head>
+
 	<body>
 		<h1>Geo Test</h1>
 		Hello World!
@@ -9,10 +11,25 @@
 
 		<script>
 		function getLocation() {
-			if(navigator.geolocation) {
+			//if(navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(showPosition)
-			} else {
-				alert("Geolocation not supported")
+			//} else {
+			//	alert("Geolocation not supported")
+			//}
+
+			function sendPostion(position){
+
+				jQuery.post("blank.url",
+
+				{
+					latitude: position.coords.latitude;
+					longitude: position.coords.longitude;
+					timestamp: new Date().getTime();
+				},
+
+				alert("Report Successful")
+
+				)
 			}
 
 			function showPosition(position) {
