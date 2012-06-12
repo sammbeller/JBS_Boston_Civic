@@ -37,7 +37,7 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
   end
 
-  # POST /reports
+  # POST /reports?x=21312312&y=1232131232
   # POST /reports.json
   def create
     @report = Report.new()
